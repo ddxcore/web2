@@ -52,7 +52,7 @@ a {
 
 /* 1. Highlight the specific letters */
 .banner-title span {
-  color: #ff5722; /* Change this to your preferred highlight color */
+  color: #22c0ff; /* Change this to your preferred highlight color */
   font-weight: 800; /* Makes them pop a bit more */
 }
 
