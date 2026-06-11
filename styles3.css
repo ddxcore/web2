@@ -1,0 +1,688 @@
+:root {
+  --bg: #050816;
+  --bg-alt: #0b1220;
+  --fg: #f9fafb;
+  --muted: #9ca3af;
+  --accent: #38bdf8;
+  --accent-soft: rgba(56, 189, 248, 0.12);
+  --border: #1f2933;
+  --radius: 10px;
+  --shadow: 0 18px 45px rgba(15, 23, 42, 0.7);
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: radial-gradient(circle at top, #111827 0, #020617 50%, #000 100%);
+  color: var(--fg);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* --- Header Specific Changes --- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: #050816; /* White background for the logo banner */
+  border-bottom: 1px solid #e2e8f0;
+  padding: 0.5rem 0;
+}
+/* Layout alignment for the inner header container */
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Evenly spaces the logo, text, and menu */
+  padding: 0.5rem 1rem;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800;900&display=swap');
+
+.banner-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 5em;          
+  color: #3376b0;              
+  font-weight: 900;            /* Heavy weight for maximum contrast */
+  letter-spacing: -0.01em;     /* Tighter spacing works beautifully for Playfair */
+  margin: 0;
+  text-transform: uppercase;   
+}
+
+/* Styled Banner Title 
+.banner-title {
+  font-size: 5em;          /* Larger, professional font size */
+  color: #3376b0;              /* Clean tech-focused blue */
+  font-weight: 1500;            /* Bold structural presence */
+  letter-spacing: -0.03em;     /* Modern tight kerning */
+  margin: 0;
+  text-transform: uppercase;   /* Optional: gives it a strong corporate feel */
+}
+*/
+
+/*
+.nav-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.banner-title {
+  /* Increases the size (adjust as needed, e.g., 2.5rem or 36px) */
+  font-size: 2.5rem; 
+  
+  /* Applies a professional, vibrant blue color */
+  color: #0076df; 
+  
+  /* Optional: Ensures the text stands out nicely */
+  font-weight: 700;
+  margin: 0;
+}
+*/
+
+.main-logo {
+  height: 20px; /* Adjusting size to fit the white banner */
+  width: auto;
+  display: block;
+}
+
+.nav-menu a {
+  margin-left: 1.4rem;
+  font-size: 1.5rem;
+  color: #475569; /* Darker text for white background */
+  font-weight: 500;
+}
+
+.nav-menu a:hover {
+  color: var(--accent);
+}
+
+.nav-btn {
+  background: #0f172a;
+  color: #ffffff !important;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+}
+/* ------------------------------ */
+
+.hero {
+  padding: 5rem 1.5rem 3rem;
+}
+/*
+.hero-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  text-align: left;
+}*/
+.hero-inner h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4em;            /* Garamond renders slightly smaller, so we bump the size */
+  font-style: italic;
+  color: #ffffff;
+  font-weight: 500;          
+  line-height: 1.2;
+}
+.hero h1 {
+  font-size: clamp(2rem, 4vw, 2.7rem);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.hero h1 span {
+  color: var(--accent);
+}
+//test2.html supprt
+/* Container sitting at the top of your page */
+.hero_inner {
+  width: 100%;
+  overflow: hidden;        /* Hides the horizontal scrollbar completely */
+  white-space: nowrap;     /* Forces everything onto a single line */
+  padding: 20px 0;         /* Adds breathing room top and bottom */
+}
+
+/* The moving track holding both h1 elements */
+.marquee_track {
+  display: inline-flex;
+  white-space: nowrap;
+  /* Adjust 25s (25 seconds) to make it faster or slower */
+  animation: smoothMarquee 25s linear infinite; 
+  will-change: transform;  /* Optimizes browser performance for smooth scrolling */
+}
+/* Your specific Garamond Typography applied directly to the marquee h1s */
+.hero_inner h1 {
+  display: inline-block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.6rem, 3vw, 2.3em); /* Uses clamp to stay responsive on mobile */
+  font-style: italic;
+  color: #ffffff;
+  font-weight: 500;          
+  line-height: 1.2;
+  margin: 0;
+  padding-right: 60px;     /* Creates the gap before the text repeats */
+}
+
+/* Accent highlight if you decide to wrap any words in a <span> later */
+.hero_inner h1 span {
+  color: var(--accent);
+}
+
+/* The animation math: Moves exactly 50% left to loop perfectly */
+@keyframes smoothMarquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* Optional: Pauses the marquee smoothly when someone hovers over it */
+.hero_inner:hover .marquee_track {
+  animation-play-state: paused;
+}
+Why this wo
+.hero p {
+  max-width: 620px;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.hero-actions {
+  margin-top: 1.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+.products-container {
+  margin-top: 1.5rem;
+}
+
+.product-item {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 1.2rem; /* Creates the clean visual separation between lines */
+  color: #e0e0e0;        /* Keeps it readable against your dark background */
+}
+.product-item1 strong{
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 1.2rem; /* Creates the clean visual separation between lines */
+  color: #19a817;        /* Keeps it readable against your dark background */
+}
+.product-item2 strong{
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 1.2rem; /* Creates the clean visual separation between lines */
+  color: #357bc1;        /* Keeps it readable against your dark background */
+}
+.product-item3 strong {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 1.2rem; /* Creates the clean visual separation between lines */
+  color: #cfbe3d;        /* Keeps it readable against your dark background */
+}
+/* Optional: Gives a subtle pop to the team names */
+.product-item strong {
+  color: #19a817;        /* Matches your clean tech-focused blue */
+}
+
+.consultancy-container {
+  margin-top: 1.5rem;
+}
+
+.consultancy-item {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 1.2rem; /* Creates the clean visual separation between lines */
+  color: #e0e0e0;        /* Keeps it readable against your dark background */
+}
+
+/* Optional: Gives a subtle pop to the team names */
+.consultancy-item strong {
+  color: #357bc1;        /* Matches your clean tech-focused blue */
+}
+.channelpartner-container {
+  margin-top: 1.5rem;
+}
+
+.channelpartner-item {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 1.2rem; /* Creates the clean visual separation between lines */
+  color: #e0e0e0;        /* Keeps it readable against your dark background */
+}
+
+/* Optional: Gives a subtle pop to the team names */
+.channelpartner-item strong {
+  color: #cfbe3d;        /* Matches your clean tech-focused blue */
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: #020617;
+  font-weight: 600;
+}
+
+.btn.primary:hover {
+  background: #0ea5e9;
+  transform: translateY(-1px);
+}
+
+.btn.ghost {
+  border-color: rgba(148, 163, 184, 0.5);
+  color: var(--muted);
+  background: transparent;
+}
+
+.section {
+  padding: 3.5rem 1.5rem;
+}
+
+.section.alt {
+  background: radial-gradient(circle at top, #020617 0, #020617 60%, #000 100%);
+}
+
+.section h2 {
+  max-width: 1040px;
+  margin: 0 auto 2rem;
+  font-size: 1.5rem;
+}
+
+.cards {
+  max-width: 1040px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: rgba(15, 23, 42, 0.95);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  box-shadow: var(--shadow);
+}
+
+.timeline {
+  max-width: 880px;
+  margin: 0 auto;
+  padding-left: 1.2rem;
+  list-style: none;
+  border-left: 2px solid rgba(55, 65, 81, 0.9);
+}
+
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: -0.77rem;
+  top: 0.35rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.contact-form {
+  max-width: 520px;
+  margin: 1.5rem auto 0;
+  padding: 1.6rem 1.5rem 1.4rem;
+  border-radius: var(--radius);
+  background: rgba(15, 23, 42, 0.98);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 0.55rem 0.65rem;
+  border-radius: 6px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  background: #020617;
+  color: var(--fg);
+}
+
+.footer {
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--muted);
+  border-top: 1px solid rgba(15, 23, 42, 0.9);
+  background: #020617;
+}
+
+@media (max-width: 640px) {
+  .nav-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .nav-menu a {
+    margin: 0 0.5rem;
+  }
+}
+
+/* 1. LOCK THE OVERFLOW ON THE ENTIRE HERO AREA */
+.hero {
+  position: relative;
+  width: 100%;
+  overflow: hidden; /* CRITICAL: Prevents marquee from pushing static content left */
+  box-sizing: border-box;
+}
+
+/* 2. THE WINDOW TRACK FOR THE SCROLLING TEXT */
+.hero_inner {
+  width: 100%;
+  overflow: hidden;         /* Hides the text outside the browser view */
+  white-space: nowrap;      /* Keeps text on a single row */
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+
+/* 3. THE ANIMATION TRACK CONTAINER */
+.marquee_track {
+  display: flex;            /* Forces the two h1 blocks perfectly side-by-side */
+  white-space: nowrap;
+  width: max-content;       /* Allocates space dynamically without stretching the page */
+  animation: smoothMarquee 12s linear infinite; 
+  will-change: transform;
+}
+
+/* 4. THE MARQUEE H1 RULES */
+.hero_inner h1 {
+  display: inline-block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.5rem, 3vw, 2.2rem); 
+  font-style: italic;
+  color: #ffffff;
+  font-weight: 500;          
+  line-height: 1.2;
+  margin: 0;
+  padding-right: 120px;     /* Sets the perfect gap before repeating */
+}
+
+/* PILLAR HIGHLIGHTS */
+.hero_inner h1 span.pillar-products { color: #19a817; font-style: normal; font-weight: 600; }
+.hero_inner h1 span.pillar-execution { color: #357bc1; font-style: normal; font-weight: 600; }
+.hero_inner h1 span.pillar-scale { color: #cfbe3d; font-style: normal; font-weight: 600; }
+
+/* 5. FIX THE STATIC UNDERLYING CONTENT (PRODUCTS, CONSULTANCY, ETC.) */
+/* Make sure your main content container resets the layout alignment */
+.container, #products, #consultancy, main {
+  width: 100%;
+  max-width: 1000px;       /* Or whatever your preferred site width is */
+  margin-left: auto;       /* Centers content perfectly */
+  margin-right: auto;      /* Centers content perfectly */
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* THE LOOP MATH */
+@keyframes smoothMarquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0); 
+  }
+}
+//card section styles
+/* Split the container 60% Left / 40% Right */
+.products-container {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  align-items: start;
+}
+
+.products-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Individual Card Blocks */
+.product-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 24px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Match the marquee colors exactly to the card titles */
+.core-theme { color: #00f0ff; font-size: 1.2rem; }
+.engine-theme { color: #ff007f; font-size: 1.2rem; }
+.scale-theme { color: #00ff66; font-size: 1.2rem; }
+
+/* Right Side Image Board Design */
+.products-right {
+  position: sticky;
+  top: 40px; /* Floating panel follows the screen on scroll */
+  width: 100%;
+}
+
+.image-board {
+  position: relative;
+  width: 50%;
+  height: 450px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #0f1115;
+}
+
+.image-board img {
+  position:relative;
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.board-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(to top, rgba(10, 12, 16, 0.7), transparent);
+}
+
+/* Fallback for smaller/mobile responsive viewports */
+@media (max-width: 968px) {
+  .products-container {
+    grid-template-columns: 1fr;
+  }
+  .products-right {
+    position: static;
+  }
+  .image-board {
+    height: 400px;
+  }
+}
+/* 1. FORCE THE TWO-COLUMN GRID */
+.products-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Balances the left card column and right image column perfectly */
+  gap: 40px;
+  align-items: start;
+}
+
+/* Left side alignment */
+.products-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  /* FIX: Prevents the cards from stretching vertically to match the right image */
+  justify-content: flex-start; 
+}
+
+/* Individual Card Blocks */
+.product-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  /* OPTIONAL: Reduced top/bottom padding from 24px to 16px to make cards more compact */
+  padding: 16px 24px; 
+  width: 100%;
+  max-width: 480px;
+}
+/* 1. THE MAIN CONTAINER (Stays 2 columns everywhere) */
+.products-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Keeps them split evenly side-by-side */
+  gap: 40px;                         
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  align-items: start;                
+}
+
+/* 2. THE RIGHT SIDE IMAGE CONTAINER */
+.products-right {
+  position: sticky;
+  top: 20px;       /* Keeps it floating dynamically as you scroll */
+  width: 100%;     
+}
+
+.image-board {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #0f1115;
+}
+
+.image-board img {
+  width: 100%;
+  height: auto;    
+  object-fit: contain; 
+  display: block;
+}
+
+/* 3. UPDATED MOBILE SAFEGUARD */
+/* Remove or replace your old media query with this so it doesn't break the layout */
+@media (max-width: 968px) {
+  .products-container {
+    gap: 20px; /* Just narrows the gap on smaller screens instead of dropping the image down */
+  }
+  /* Do NOT change .products-right to position: static here anymore */
+}
+
+//channel partners
+/* The full-width card wrapper */
+.partner-wide-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 32px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Adjust text blocks layout */
+.partner-text-content p {
+  margin: 0 0 12px 0;
+  line-height: 1.6;
+}
+.partner-text-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Integrated Horizontal Infinite Scrolling Arena */
+.logo-marquee-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+}
+
+/* Moving conveyor track line */
+.logo-track {
+  display: flex;
+  flex-direction: row;
+  width: calc(250px * 8); /* Matches card slide footprint times overall array items */
+  animation: scrollLogosInside 15s linear infinite;
+}
+
+/* The style properties for the moving partner badges */
+.logo-slide {
+  width: 250px;
+  flex-shrink: 0;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  display: block;
+}
+
+/* Simple centered button alignment row */
+.partner-actions-row {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 8px;
+}
+
+/* Seamless infinite timeline conversion framework */
+@keyframes scrollLogosInside {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 4)); /* Shifts cleanly by exactly half the group array width */
+  }
+}
+
+/* Mobile Adaptive Polish */
+@media (max-width: 768px) {
+  .partner-wide-card {
+    padding: 20px;
+  }
+  .partner-actions-row {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+}
