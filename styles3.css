@@ -50,16 +50,33 @@ a {
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800;900&display=swap');
 
-.banner-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 5em;          
-  color: #3376b0;              
-  font-weight: 900;            /* Heavy weight for maximum contrast */
-  letter-spacing: -0.01em;     /* Tighter spacing works beautifully for Playfair */
-  margin: 0;
-  text-transform: uppercase;   
+/* 1. Highlight the specific letters */
+.banner-title span {
+  color: #ff5722; /* Change this to your preferred highlight color */
+  font-weight: 800; /* Makes them pop a bit more */
 }
 
+/* 2. Make the title responsive for mobile views */
+.banner-title {
+  /* Use clamp so it scales perfectly down to mobile sizes without breaking */
+  font-size: clamp(1.5rem, 4vw, 2.5rem); 
+  
+  /* Prevents long text from clipping or forcing horizontal scroll */
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  
+  /* Optional: Ensures tight, clean spacing on smaller screens */
+  letter-spacing: -0.02em; 
+  line-height: 1.2;
+}
+
+/* Alternative: Traditional Media Query approach if you prefer */
+@media (max-width: 480px) {
+  .banner-title {
+    font-size: 1.6rem; /* Forces a smaller size specifically on mobile */
+  }
+}
 /* Styled Banner Title 
 .banner-title {
   font-size: 5em;          /* Larger, professional font size */
