@@ -60,7 +60,34 @@ a {
 
 /* Targets the <span> tags you add around D, D, and X in your HTML */
 .banner-title span {
+<<<<<<< HEAD
   color: #ff5722; /* Change this to your preferred highlight color */
+=======
+  color: #357bc1; /* Change this to your preferred highlight color */
+  font-weight: 800; /* Makes them pop a bit more */
+}
+
+/* 2. Make the title responsive for mobile views */
+.banner-title {
+  /* Use clamp so it scales perfectly down to mobile sizes without breaking */
+  font-size: clamp(1.5rem, 4vw, 2.5rem); 
+  
+  /* Prevents long text from clipping or forcing horizontal scroll */
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  
+  /* Optional: Ensures tight, clean spacing on smaller screens */
+  letter-spacing: -0.02em; 
+  line-height: 1.2;
+}
+
+/* Alternative: Traditional Media Query approach if you prefer */
+@media (max-width: 480px) {
+  .banner-title {
+    font-size: 2.6rem; /* Forces a smaller size specifically on mobile */
+  }
+>>>>>>> 21753ce (Add partner logo images)
 }
 /* Styled Banner Title 
 .banner-title {
@@ -208,6 +235,7 @@ Why this wo
   flex-wrap: wrap;
   gap: 0.9rem;
 }
+
 .products-container {
   margin-top: 1.5rem;
 }
