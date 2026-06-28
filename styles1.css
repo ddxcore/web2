@@ -17,7 +17,11 @@
 *::after {
   box-sizing: border-box;
 }
-
+/* --- Add this block directly above your body styles --- */
+html {
+  scroll-behavior: smooth;     /* Gives your menu links a smooth sliding transition */
+  scroll-padding-top: 130px;   /* Creates a global bumper matching the height of your sticky menu */
+}
 body {
   margin: 0;
   font-family: var(--font-sans);
@@ -68,7 +72,7 @@ a {
   
   /* Optional: Ensures tight, clean spacing on smaller screens */
   letter-spacing: -0.02em; 
-  line-height: 1.2;
+  line-height: 0.5;
 }
 
 /* Alternative: Traditional Media Query approach if you prefer */
@@ -77,16 +81,7 @@ a {
     font-size: 2.6rem; /* Forces a smaller size specifically on mobile */
   }
 }
-/* Styled Banner Title 
-.banner-title {
-  font-size: 5em;          /* Larger, professional font size */
-  color: #3376b0;              /* Clean tech-focused blue */
-  font-weight: 1500;            /* Bold structural presence */
-  letter-spacing: -0.03em;     /* Modern tight kerning */
-  margin: 0;
-  text-transform: uppercase;   /* Optional: gives it a strong corporate feel */
-}
-*/
+
 
 /*
 .nav-inner {
@@ -136,7 +131,10 @@ a {
 /* ------------------------------ */
 
 .hero {
-  padding: 5rem 1.5rem 3rem;
+  /*padding: 5rem 1.5rem 3rem;*/
+  padding-top: 60px;    /* Reduce from whatever high value (e.g., 120px) it currently has */
+  padding-bottom: 60px; /* Reduces space below the text */
+  min-height: auto;     /* If it has a hardcoded min-height like 70vh, changing to auto lets it shrink */
 }
 /*
 .hero-inner {
